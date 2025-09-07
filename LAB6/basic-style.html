@@ -3,8 +3,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic Styles</title>
+    <style>
+        h1 {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h2 {
+            color: darkblue;
+        }
+    </style>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 style="color:green;">A new activity for laboratory (Module 6) </h1>
+    <h1 style="color:green;">A new activity for laboratory (Module 6)</h1>
+    <p style="background-color: lightyellow; color: brown;">
+        This is under Lab 6 Folder. (Inline styled paragraph)
+    </p>
+    <h2>This is styled by Internal CSS</h2>
+
+    <!-- External CSS target -->
+    <button class="myButton">Styled by External CSS</button>
 </body>
 </html>
