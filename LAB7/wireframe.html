@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wireframe</title>
+  <style>
+    body {
+      border: 3px solid black;
+      font-family: Arial, sans-serif;
+      margin: 25px;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+      color: #4a2c2a;
+    }
+
+    nav {
+      text-align: center;
+      background-color: #d9b99b;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: black;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    /* Main layout using GRID */
+    .main {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* two columns */
+      gap: 20px;
+    }
+
+    section {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      border-top: 2px solid black;
+      margin-top: 20px;
+      padding: 10px; 
+      font-size: 0.9em;
+      background-color: #3f2727;
+      color: #b47070;
+    }
+  </style>
+</head>
+<body>
+  <h3>Wireframe<hr></h3> 
+  <h1>Bean & Brew Cafe</h1>
+  <p style="text-align: center;">Your daily dose of comfort.</p>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a> 
+  </nav>
+
+  <!-- Main content in grid -->
+  <div class="main">
+    <section>
+      <h2>Our Story</h2>
+      <p>Bean & Brew started as a small family cafe in 2010. Today, we serve a community of coffee lovers from all walks of life.</p>
+    </section>
+
+    <section>
+      <h2>Our Menu Preview</h2>
+      <ul>
+        <li>Espresso</li>
+        <li>Iced Latte</li>
+        <li>Caramel Macchiato</li>
+        <li>Grilled Panini</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Bean & Brew Cafe. All rights reserved.</p>
+  </footer>
+</body>
+</html>
