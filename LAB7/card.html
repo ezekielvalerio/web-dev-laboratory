@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Card Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #109475;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            font-family: "Times New Roman"; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 15px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Flexbox Profile Cards</h1>
+    <div class="card-container">
+
+        <div class="card">
+            <img src="GOKU.png" alt="Profile 1">
+            <h3>Son Goku</h3>
+            <p>Son Goku, born Kakarot, is a male Saiyan and the main protagonist of the Dragon Ball metaseries created by Akira Toriyama.</p>
+        </div>
+
+        <div class="card">
+            <img src="SAKURAGI.jpg" alt="Profile 2">
+            <h3>Hanamichi Sakuragi</h3>
+            <p>Hanamichi Sakuragi is the main protagonist of Slam Dunk, a sports manga written and illustrated by Takehiko Inoue. Hanamichi Sakuragi is a delinquent very unpopular with girls, having been rejected an astonishing fifty times.</p>
+        </div>
+
+        <div class="card">
+            <img src="DORAEMON.webp" alt="Profile 3">
+            <h3>Doraemon</h3>
+            <p>Doraemon is a male robotic cat that travels back in time from the 22nd century to aid a preteen boy named Nobita.</p>
+        </div>
+    </div>
+</body>
+</html>
