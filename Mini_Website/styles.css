@@ -16,7 +16,7 @@ body {
 
 header {
   text-align: center;
-  background: #3b3b98;
+  background: #3b3b98; 
   color: white;
   padding: 20px;
   border-radius: 8px;
@@ -24,16 +24,10 @@ header {
 }
 
 h2 {
-  color: #0d00ff;      
-  text-align: center;
   margin-bottom: 10px;
-  border-bottom: 3px solid #ff6600;
+  border-bottom: 3px solid orange; 
   display: inline-block;
   padding-bottom: 5px;
-}
-
-header h1 {
-  margin-bottom: 10px;
 }
 
 header p {
@@ -56,14 +50,19 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   color: white;
-  background: #575fcf;
+  background: #575fcf; 
   padding: 8px 15px;
   border-radius: 5px;
   transition: background 0.3s;
 }
 
 nav ul li a:hover {
-  background: #706fd3;
+  background: green;
+}
+
+nav ul li a.active {
+  background: green;
+  color: white;
 }
 
 main {
