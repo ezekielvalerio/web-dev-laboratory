@@ -20,7 +20,8 @@ header {
   color: white;
   padding: 20px;
   border-radius: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 80px; /* give space for nav */
+  position: relative; /* allow nav to move out */
 }
 
 h2 {
@@ -34,13 +35,23 @@ header p {
   font-style: italic;
 }
 
+nav {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
 nav ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
-  margin-top: 10px;
+  margin: 10px 0;
+  padding: 0;
+  max-width: 1800px;
 }
 
 nav ul li {

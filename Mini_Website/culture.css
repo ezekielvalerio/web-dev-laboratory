@@ -54,7 +54,7 @@ nav ul {
   display: flex;
   flex-wrap: wrap;         
   justify-content: center;  
-  gap: 30px;               
+  gap: 20px;               
   margin: 20px auto;
   padding: 0;
   max-width: 1800px;      
@@ -68,7 +68,7 @@ nav ul li a {
   text-decoration: none;
   color: white;
   background: #3b3b98;
-  padding: 12px 25px;
+  padding: 8px 20px;
   border-radius: 50px;
   font-weight: bold;
   box-shadow: 0 4px 6px rgba(0,0,0,0.3);
@@ -141,6 +141,7 @@ nav ul li a.active {
   line-height: 1.5;
   color: #444;
 }
+
 
 footer {
   text-align: center;

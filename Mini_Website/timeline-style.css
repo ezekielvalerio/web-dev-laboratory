@@ -47,6 +47,7 @@ nav ul li a {
   background: #3b3b98;
   padding: 8px 15px;
   border-radius: 5px;
+  font-weight: bold;
   transition: background 0.3s;
 }
 
