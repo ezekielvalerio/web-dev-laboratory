@@ -9,7 +9,7 @@ body {
   line-height: 1.6;
   background-color: #ab8c61;
   color: #333;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
   padding: 20px;
 }
@@ -37,7 +37,8 @@ nav ul {
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
-  margin: 15px 0;
+  max-width: 1800px;
+  margin: 20px 0;
 }
 
 nav ul li a {

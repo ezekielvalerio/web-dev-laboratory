@@ -23,7 +23,6 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Header */
 header {
   text-align: center;
   background: linear-gradient(to right, #ffdd00, #ff9f1c);
@@ -50,13 +49,12 @@ header p {
   font-size: 1.1em;
 }
 
-/* Navigation */
 nav ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;          /* allow wrapping if needed */
-  justify-content: center;  /* center items nicely */
-  gap: 30px;                /* even spacing */
+  flex-wrap: wrap;         
+  justify-content: center;  
+  gap: 30px;               
   margin: 20px auto;
   padding: 0;
   max-width: 1800px;      
@@ -87,7 +85,6 @@ nav ul li a.active {
   background: green;
 }
 
-/* Culture Content */
 .culture-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -145,7 +142,6 @@ nav ul li a.active {
   color: #444;
 }
 
-/* Footer */
 footer {
   text-align: center;
   background: #3b3b98;
