@@ -1,6 +1,22 @@
-@media (min-width: 600px) {
-    .box {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fix Responsive</title>
+  <style>
+    @media (min-width: 600px) {
+      .box {
         display: grid;
         grid-template-columns: 1fr 1fr;
+      }
     }
-}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div>Column 1</div>
+    <div>Column 2</div>
+  </div>
+</body>
+</html>
