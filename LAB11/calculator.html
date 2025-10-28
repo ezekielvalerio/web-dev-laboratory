@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #a8edea, #fed6e3);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .calc-box {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    input {
+      padding: 10px;
+      width: 120px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin: 10px;
+      text-align: center;
+    }
+    button {
+      background: #6a11cb;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #2575fc;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="calc-box">
+    <h1>Simple Calculator</h1>
+    <input type="number" id="num1" placeholder="Number 1">
+    <input type="number" id="num2" placeholder="Number 2">
+    <br>
+    <button onclick="addNumbers()">Add</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function addNumbers() {
+      const n1 = parseFloat(document.getElementById('num1').value);
+      const n2 = parseFloat(document.getElementById('num2').value);
+      if (isNaN(n1) || isNaN(n2)) {
+        document.getElementById('result').innerText = "⚠️ Please enter valid numbers!";
+        return;
+      }
+      const sum = n1 + n2;
+      document.getElementById('result').innerText = `✅ The sum is ${sum}`;
+    }
+  </script>
+</body>
+</html>
