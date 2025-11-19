@@ -9,17 +9,21 @@
 <ul id="output"></ul>
 
 <script>
-let feedbacks = [];
-feedbacks.push("Great coffee!");
-feedbacks.push("Nice ambiance");
+    console.log("JS Loaded!");
 
-let list = document.getElementById("output");
+    let feedbacks = ["Great coffee!", "Nice ambiance"];
 
-for (let i = 0; i < feedbacks.length; i++) {
-    let li = document.createElement("li");
-    li.textContent = feedbacks[i];
-    list.appendChild(li);
-}
+    let list = document.getElementById("output");
+
+    if (!list) {
+        console.log("ERROR: output element NOT FOUND");
+    }
+
+    feedbacks.forEach(function(text) {
+        let li = document.createElement("li");
+        li.textContent = text;
+        list.appendChild(li);
+    });
 </script>
 
 </body>
