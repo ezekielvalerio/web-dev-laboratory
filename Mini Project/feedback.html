@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Café Feedback</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffb199, #ff0844);
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.97);
+            padding: 25px;
+            width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            text-align: center;
+            color: #c21732;
+            margin-top: 0;
+            letter-spacing: 1px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            background: #fffafc;
+            font-size: 14px;
+            resize: none;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #ff0844;
+            outline: none;
+            box-shadow: 0 0 4px rgba(255, 8, 68, 0.3);
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #ff0844, #ffb199);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 10px rgba(255, 8, 68, 0.3);
+        }
+
+        #success {
+            margin-top: 15px;
+            padding: 10px;
+            text-align: center;
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            border-radius: 5px;
+        }
+
+        #feedbackList {
+            margin-top: 25px;
+            padding: 15px;
+            background: rgba(255,255,255,0.96);
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+        }
+
+        #feedbackList h3 {
+            margin-top: 0;
+        }
+
+        .fb-item {
+            background: #fff3f5;
+            padding: 10px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            border-left: 5px solid #ff0844;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Café Feedback</h2>
+
+    <form id="feedbackForm">
+        <label>Name:</label>
+        <input type="text" id="name">
+
+        <label>Email:</label>
+        <input type="email" id="email">
+
+        <label>Message:</label>
+        <textarea id="message" rows="4"></textarea>
+
+        <button type="submit">Submit Feedback</button>
+    </form>
+
+    <p id="success">Thank you! Your feedback has been submitted.</p>
+
+    <div id="feedbackList">
+        <h3>Previous Feedback</h3>
+        <div id="entries"></div>
+    </div>
+</div>
+
+
+<script>
+let allFeedback = [];
+
+document.getElementById("feedbackForm").onsubmit = function(event) {
+    event.preventDefault();
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let msg = document.getElementById("message").value.trim();
+    let success = document.getElementById("success");
+    let entries = document.getElementById("entries");
+
+    if (name === "") {
+        alert("Name cannot be empty.");
+        return;
+    }
+
+    if (!email.includes("@") || !email.includes(".")) {
+        alert("Please enter a valid email.");
+        return;
+    }
+
+    if (msg.length < 5) {
+        alert("Message must be more than 5 characters.");
+        return;
+    }
+
+    allFeedback.push({ name, email, msg });
+
+    success.style.display = "block";
+
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+
+    entries.innerHTML = "";
+    allFeedback.forEach(function(item) {
+        let div = document.createElement("div");
+        div.className = "fb-item";
+        div.innerHTML = `<strong>${item.name}</strong><br>${item.msg}`;
+        entries.appendChild(div);
+    });
+};
+</script>
+
+</body>
+</html>
