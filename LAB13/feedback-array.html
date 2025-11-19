@@ -5,13 +5,20 @@
 </head>
 <body>
 
+<h2>Feedback List</h2>
+<ul id="output"></ul>
+
 <script>
 let feedbacks = [];
 feedbacks.push("Great coffee!");
 feedbacks.push("Nice ambiance");
 
+let list = document.getElementById("output");
+
 for (let i = 0; i < feedbacks.length; i++) {
-    console.log(feedbacks[i]);
+    let li = document.createElement("li");
+    li.textContent = feedbacks[i];
+    list.appendChild(li);
 }
 </script>
 
