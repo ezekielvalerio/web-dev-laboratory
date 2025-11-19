@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Email Check</h2>
+
+    <form id="emailForm">
+        <label>Email:</label>
+        <input type="text" id="email"><br><br>
+        <button type="submit">Check</button>
+    </form>
+
+    <p id="result"></p>
+</div>
+
+<script>
+document.getElementById("emailForm").onsubmit = function(event) {
+    event.preventDefault();
+
+    let email = document.getElementById("email").value;
+    let result = document.getElementById("result");
+
+    if (email.includes("@") && email.includes(".")) {
+        result.style.color = "green";
+        result.textContent = "Email accepted!";
+    } else {
+        result.style.color = "red";
+        result.textContent = "Invalid email format.";
+    }
+};
+</script>
+
+</body>
+</html>

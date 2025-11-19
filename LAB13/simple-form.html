@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Form</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ffb199, #ff0844);
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+    }
+
+    .form-container {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 25px;
+        border-radius: 12px;
+        width: 320px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        backdrop-filter: blur(4px);
+        border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    h2 {
+        margin-top: 0;
+        text-align: center;
+        color: #d62828;
+        letter-spacing: 1px;
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-top: 15px;
+        color: #333;
+    }
+
+    input[type="text"], 
+    input[type="email"],
+    input[type="date"],
+    input[type="time"],
+    input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 6px;
+        border-radius: 6px;
+        border: 1px solid #e0e0e0;
+        background: #fffafc;
+        transition: 0.2s ease-in-out;
+    }
+
+    input:focus {
+        border-color: #ff0844;
+        outline: none;
+        box-shadow: 0 0 4px rgba(255, 8, 68, 0.4);
+    }
+
+    button {
+        margin-top: 22px;
+        width: 100%;
+        padding: 12px;
+        background: #ff0844;
+        background: linear-gradient(135deg, #ff0844, #ffb199);
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        transition: 0.2s ease-in-out;
+    }
+
+    button:hover {
+        transform: scale(1.03);
+        box-shadow: 0 4px 10px rgba(255, 8, 68, 0.3);
+    }
+
+    #output {
+        margin-top: 20px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 12px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+        display: none;
+        border: 1px solid rgba(255,255,255,0.6);
+    }
+
+    #output p {
+        margin: 6px 0;
+        font-size: 15px;
+    }
+</style>
+
+</head>
+<body>
+  <div class="form-container">
+    <h2>Simple Form</h2>
+
+    <form id="myForm" onsubmit="handleSubmit(event)">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="output"></div>
+  </div>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault(); 
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+
+      const output = document.getElementById('output');
+      output.innerHTML = `
+        <h3>Submitted Data:</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+      `;
+
+      output.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

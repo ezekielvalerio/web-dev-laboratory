@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Array</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 20px;
+        }
+
+        h2, h3 {
+            text-align: center;
+        }
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        ul {
+            width: 300px;
+            margin: 20px auto;
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            background: white;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+<h2>Contact Form</h2>
+
+<form id="contactForm">
+    <label>Name:</label>
+    <input type="text" id="name"><br><br>
+
+    <label>Message:</label>
+    <input type="text" id="message"><br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+<h3>Submitted Entries</h3>
+<ul id="output"></ul>
+
+<script>
+let entries = [];
+
+document.getElementById("contactForm").onsubmit = function (event) {
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let message = document.getElementById("message").value;
+
+    if (name === "" || message === "") {
+        alert("Please fill out all fields.");
+        return;
+    }
+
+    entries.push({ name, message });
+
+    let list = document.getElementById("output");
+    list.innerHTML = "";
+
+    entries.forEach(function(entry) {
+        let li = document.createElement("li");
+        li.textContent = entry.name + ": " + entry.message;
+        list.appendChild(li);
+    });
+};
+</script>
+
+</body>
+</html>
